@@ -1,6 +1,7 @@
 import { Sidebar } from "@/components/docs/sidebar";
 import { MobileNav } from "@/components/docs/mobile-nav";
 import { ThemeToggle } from "@/components/docs/theme-toggle";
+import { Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function IntroductionLayout({
@@ -10,20 +11,21 @@ export default function IntroductionLayout({
 }) {
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex h-14 items-center px-4 md:px-6">
-          <div className="flex items-center gap-3">
+      {/* Top nav */}
+      <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-sm">
+        <div className="mx-auto max-w-6xl px-6 h-14 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
             <MobileNav />
-            <Link
-              href="/blueprint"
-              className="font-bold tracking-tight text-foreground"
-            >
-              FlowChat SOP
-            </Link>
+            <div className="flex items-center gap-2.5">
+              <div className="h-7 w-7 rounded-lg bg-primary flex items-center justify-center">
+                <Zap className="h-4 w-4 text-primary-foreground" />
+              </div>
+              <Link href="/" className="font-bold text-sm tracking-tight">
+                FlowChat SOP
+              </Link>
+            </div>
           </div>
-          <div className="ml-auto flex items-center gap-2">
-            <ThemeToggle />
-          </div>
+          <ThemeToggle />
         </div>
       </header>
 
